@@ -1,16 +1,11 @@
-package Enemy;
-import java.util.Random;
-
 public class Kobold {
-
     private String Species = "Kobold";
     private String[] possibleTypes = {"Common","Warrior","Shaman","Giant"};
     private String type = this.possibleTypes[(int)(Math.random()*(this.possibleTypes.length))];
-    private String[] possibleWeapons = {"Spear","Sling","Dagger","Short_Sword","Fist"};
+    private String[] possibleWeapons = UniversalStats.CBW(this.type);
     private String weapon = this.possibleWeapons[(int)(Math.random()*(this.possibleWeapons.length))];
-    private int hth = 6 + (int)(Math.random()*2);
-    private int dmg =
-    private int
+    private int hth = UniversalStats.CBH(this.Species,this.type);
+    private int dmg = UniversalStats.WBD(this.weapon);
     private int str = 7 + (int)(Math.random()*3);
     private int dex = 15 + (int)(Math.random()*5);
     private int wis = 7 + (int)(Math.random()*2);
@@ -19,43 +14,39 @@ public class Kobold {
     public String getSpecies() {
         return Species;
     }
-
     public String[] getPossibleTypes() {
         return possibleTypes;
     }
-
     public String getType() {
         return type;
     }
-
     public String[] getPossibleWeapons() {
         return possibleWeapons;
     }
-
     public String getWeapon() {
         return weapon;
     }
-
     public int getStr() {
         return str;
     }
-
     public int getDex() {
         return dex;
     }
-
     public int getWis() {
         return wis;
     }
 
+
     public void Stats(){
         String species = this.Species;
         String type = this.type;
+        int health = this.hth;
         String weapon = this.weapon;
+        int damage = this.dmg;
         int strength = this.str;
         int dexterity = this.dex;
         int wisdom = this.wis;
-        System.out.print("EnemyType :"+type+" "+species+"\nWeapon :"+weapon+"\nSTR :"+strength+"\nDEX :"+dexterity+"\nWIS :"+wisdom+"\n");
+        System.out.print("EnemyType :"+type+" "+species+"\nHealth :"+health+"\nWeapon :"+weapon+"\nDMG :"+damage+"\nSTR :"+strength+"\nDEX :"+dexterity+"\nWIS :"+wisdom+"\n");
     }
 
 
