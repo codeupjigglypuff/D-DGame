@@ -2,7 +2,7 @@ public class Kobold {
     private String Species = "Kobold";
     private String[] possibleTypes = {"Common","Warrior","Shaman","Giant"};
     private String type = UniversalStats.ETP(Species,possibleTypes);
-    private String[] possibleWeapons = UniversalStats.CBW(this.type);
+    private String[] possibleWeapons = UniversalStats.CBW(this.Species,this.type);
     private String weapon = this.possibleWeapons[(int)(Math.random()*(this.possibleWeapons.length))];
     private int hth = UniversalStats.CBH(this.Species,this.type);
     private int dmg = UniversalStats.WBD(this.weapon);
@@ -59,7 +59,12 @@ public class Kobold {
     public static void main(String[] args) {
      Kobold Lizzardguy = new Kobold();
         System.out.printf(
-                        "Type [%s]\nWeapon: [%s]\nStrength: [%s]\nDexterity: [%s]\nWisdom: [%s]\n"
-                            ,Lizzardguy.type,Lizzardguy.weapon,Lizzardguy.str,Lizzardguy.dex,Lizzardguy.wis);
+                        "Type [%s]" +
+                                "\nWeapon: [%s]" +
+                                "\nStrength: [%s]" +
+                                "\nDexterity: [%s]" +
+                                "\nWisdom: [%s]" +
+                                "\n"
+                                    ,Lizzardguy.type,Lizzardguy.weapon,Lizzardguy.str,Lizzardguy.dex,Lizzardguy.wis);
     }
 }
