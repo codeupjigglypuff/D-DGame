@@ -7,6 +7,7 @@ public int wght;
 public int cost;
 public String name;
 public String catagory;
+public int reqStrength = 0;
 
     public Armor(){
         this.name = "Unknown";

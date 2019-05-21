@@ -6,7 +6,7 @@ public class LeatherArmor extends Armor {
         this.armorClass = 11;
         this.cost = 10;
         this.wght = 10;
-        this.name = "LeatherArmor";
-        this.catagory = "LightArmor";
+        this.name = "Leather Armor";
+        this.catagory = "Light_Armor";
     }
 }
