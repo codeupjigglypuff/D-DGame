@@ -1,4 +1,5 @@
 public class Enemy {
+
     public static void main(String[] args) {
         Kobold sadliz = new Kobold();
         sadliz.Stats();
@@ -17,4 +18,5 @@ public class Enemy {
 
 
     }
+
 }
