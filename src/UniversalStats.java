@@ -37,6 +37,8 @@ public class UniversalStats {
                 return 4;
             case "Short_Sword":
                 return 6;
+            case "Hand_Axe":
+                return 5;
             case "Fists":
                 return 2;
             default:
@@ -63,12 +65,34 @@ public static String[] CBW(String type){
 }
 
 private static String[] CommonWeapons = {"Dagger","Sling","Fists"};
-private static String[] WarriorWeapons = {"Short_Sword","Spear"};
+private static String[] WarriorWeapons = {"Short_Sword","Spear","Hand_Axe"};
 private static String[] ShamanWeapons = {"Magic_Staff"};
-private static String[] GiantWeapons = {"Short_Staff","Spear","Magic_Staff"};
+private static String[] GiantWeapons = {"Short_Sword","Spear","Hand_Axe"};
 
 
 
+//        Enemy Type Probability
+public static String ETP(String Species,String[] EnemyArray){
+    switch (Species){
+        case "Kobold":
+            double ran = (Math.random()*10)+1;
+            if(1 <= ran && ran <= 4){
+                return EnemyArray[0];
+            }else if (4 < ran && ran <= 7){
+                return EnemyArray[1];
+            }else if (7 < ran && ran <= 9){
+                return EnemyArray[2];
+            }else{
+                return EnemyArray[3];
+            }
+
+
+
+        default:
+            return "Common";
+    }
+
+}
 
 
 
