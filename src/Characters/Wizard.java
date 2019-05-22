@@ -1,6 +1,10 @@
-public class Ranger {
+package Characters;
+
+import Characters.UniversalStats;
+
+public class Wizard {
     private String Species = "Human";
-    private String type = "Ranger";
+    private String type = "Characters.Wizard";
     private String[] possibleWeapons = UniversalStats.CBW(this.Species,this.type);
     private String weapon = this.possibleWeapons[(int)(Math.random()*(this.possibleWeapons.length))];
     private int hth = UniversalStats.CBH(this.Species,this.type);
