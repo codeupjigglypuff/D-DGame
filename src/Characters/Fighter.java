@@ -1,6 +1,10 @@
+package Characters;
+
+import Characters.UniversalStats;
+
 public class Fighter {
     private String Species = "Human";
-    private String type = "Fighter";
+    private String type = "Characters.Fighter";
     private String[] possibleWeapons = UniversalStats.CBW(this.Species,this.type);
     private String weapon = this.possibleWeapons[(int)(Math.random()*(this.possibleWeapons.length))];
 

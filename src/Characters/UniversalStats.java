@@ -1,12 +1,12 @@
-import java.lang.reflect.Array;
-
+package Characters;
+import weapons.*;
 public class UniversalStats {
 
 
 //        Class Based Health
     public static int CBH(String species,String type){
         switch (species) {
-            case "Kobold":
+            case "Enemy.Kobold":
                         switch (type) {
                 case "Common":
                     return 10;
@@ -21,11 +21,11 @@ public class UniversalStats {
     }
             case "Human":
                 switch (type){
-                    case "Fighter":
+                    case "Characters.Fighter":
                         return 10;
-                    case "Wizard":
+                    case "Characters.Wizard":
                         return 6;
-                    case "Ranger":
+                    case "Characters.Ranger":
                         return 10;
                 }
 
@@ -71,9 +71,9 @@ public class UniversalStats {
 
 
 //        Class Based Weapon
-public static String[] CBW(String species,String type){
+public static Weapon[] CBW(String species,String type){
         switch (species) {
-            case "Kobold":
+            case "Enemy.Kobold":
                 switch (type) {
                     case "Common":
                         return CommonWeapons;
@@ -86,11 +86,11 @@ public static String[] CBW(String species,String type){
                 }
             case "Human":
                 switch (type) {
-                    case "Fighter":
+                    case "Characters.Fighter":
                         return FighterStartingWeapons;
-                    case "Wizard":
+                    case "Characters.Wizard":
                         return WizardStartingWeapons;
-                    case "Ranger":
+                    case "Characters.Ranger":
                         return RangerStartingWeapons;
                 }
             default:
@@ -98,19 +98,20 @@ public static String[] CBW(String species,String type){
         }
 }
 
-private static String[] CommonWeapons = {"Dagger","Sling","Fists"};
-private static String[] WarriorWeapons = {"Short_Sword","Spear","Hand_Axe"};
-private static String[] ShamanWeapons = {"Magic_Staff","Bone_Shiv"};
-private static String[] GiantWeapons = {"Sword","Heavy_Branch","Axe"};
-private static String[] FighterStartingWeapons = {"Sword","Great_Sword","Axe"};
-private static String[] WizardStartingWeapons = {"Spell_Book"};
-private static String[] RangerStartingWeapons = {"Short_Bow"};
+private static Weapon[] CommonWeapons = {new Dagger(),new Sling(),new RustySpoon(),new PointyStick()};
+private static Weapon[] WarriorWeapons = {new ShortSword(),new Spear(),new HandAxe()};
+private static Weapon[] ShamanWeapons = {new Staff(),new PointyStick()};
+private static Weapon[] GiantWeapons = {new Sword(),new HeavyBranch(),new Axe()};
+private static Weapon[] FighterStartingWeapons = {new Sword(),new GreatSword(),new Axe()};
+private static Weapon[] WizardStartingWeapons = {new SpellBook()};
+private static Weapon[] RangerStartingWeapons = {new Spear()};
 
 
-//        Enemy Type Probability
-public static String ETP(String Species,String[] EnemyArray){
+//        Characters Type Probability
+public static String ETP(String Species){
+    private String[] EnemyArray = {"Common","Warrior","Shaman","Giant"}
     switch (Species){
-        case "Kobold":
+        case "Enemy.Kobold":
             double ran = (Math.random()*10)+1;
             if(1 <= ran && ran <= 4){
                 return EnemyArray[0];
