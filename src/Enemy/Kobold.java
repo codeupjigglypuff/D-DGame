@@ -5,9 +5,10 @@ import weapons.Weapon;
 public class Kobold extends Enemy {
     private String species = "Kobold";
     private String KoboldType = UniversalStats.ETP(species);
+    private String KoboldName = UniversalStats.specieBasedName(species);
     private Weapon[] possibleWeapons = UniversalStats.CBW(this.species,this.KoboldType);
     private Weapon KoboldsWeapon = this.possibleWeapons[(int)(Math.random()*(this.possibleWeapons.length))];
-    private int KoboldsHealth = UniversalStats.CBH(this.species,this.KoboldType);
+    private int KoboldsHealth = UniversalStats.classBasedHealth(this.species,this.KoboldType);
     private int KoboldsStrength = UniversalStats.classBasedStrength(species,KoboldType);
     private int KoboldsDexterity = UniversalStats.classBasedDexterity(species,KoboldType);
     private int KoboldsWisdom = UniversalStats.classBasedWisdom(species,KoboldType);
@@ -17,6 +18,7 @@ public class Kobold extends Enemy {
     public Kobold(){
         this.Species = species;
         this.type = KoboldType;
+        this.name = KoboldName;
         this.weapon = KoboldsWeapon;
         this.hth = KoboldsHealth;
         this.dmg = KoboldsDamage;

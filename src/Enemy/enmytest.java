@@ -14,6 +14,9 @@ public class enmytest {
 
 
 
+
+
+
         System.out.println(bob0.inspect());
         System.out.println(bob1.inspect());
         System.out.println(bob2.inspect());

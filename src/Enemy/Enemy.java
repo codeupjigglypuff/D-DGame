@@ -5,6 +5,7 @@ public class Enemy {
     public String Species;
 //    Enemy Species Sub Category
     public String type;
+    public String name;
 //    weapon enemy is currently holding
     public Weapon weapon;
 //    Enemies Health
@@ -20,9 +21,10 @@ public class Enemy {
 
     Enemy(){}
 
-    public Enemy(String Species,String Type,Weapon Weapon,int Health,int Damage,int Strength,int Dexterity,int Wisdom){
+    public Enemy(String Species,String Type,String Name,Weapon Weapon,int Health,int Damage,int Strength,int Dexterity,int Wisdom){
             this.Species = Species;
             this.type = Type;
+            this.name = Name;
             this.weapon = Weapon;
             this.hth = Health;
             this.dmg = Damage;
@@ -33,6 +35,7 @@ public class Enemy {
 
     public String inspect(){
         return "\t"+this.type+" "+this.Species+
+                "\nName :"+this.name+
                 "\nWeapon :"+this.weapon.getName()+
                 "\nWeapon DMG :"+this.weapon.getDmg()+
                 "\nDamage :"+this.dmg+

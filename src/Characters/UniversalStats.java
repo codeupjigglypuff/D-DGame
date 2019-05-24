@@ -3,8 +3,28 @@ import weapons.*;
 public class UniversalStats {
 
 
+    public static String[] koboldNames = {"Zeekkri","Atroo","Velsa","Oska","Mozko","Sozli","Fothe","Mesgre","Uthugo","Midaassi","Ghog","Nak","Vhob","Mognoo","Vrikzea","Jadzoolp","Jepred","Zilrirma","Zeknidzaald","Gelnikmos","Lassoo","Losgoo","Rukre","Hozli","Fasge","Tirgi","Fothru","Irgu","Seznurke","Oozkorso","Dres","Grulp","Qolp","Rozob","Dhenzork","Rekki","Guzha","Ulzoknos","Igzuprel","Uxilreenk","Pithrear","Goksi","Dohroon","Sassu","Rolro","Ozre","Hulkis","Pesgra","Luzugo","Tooglihrar"};
+    public static String[] goblinNames = {"Droan","Wart","Purd","Rornk","Ghenglu","Karte","Norpan","Junglo","Fluttungis","Kabmoudzaff","Krosh","Poz","Guz","Flun","Ghumkoawg","Zubro","Angboun","Kumzurg","Gharpogog","Kridgugnonk","Juglu","Hophob","Chokchok","Henbas","Pugo","Gradni","Liknoophi","Lolvimdo","Vrognamdu","Rixoatluk","Morch","Vaz","Flag","Ghurg","Windab","Zengbiz","Bugglaff","Ghidzat","Abzegnas","Oonzobnon"};
+
+
+//    Species Based Name
+    public static String specieBasedName(String Species){
+        switch (Species){
+            case "Kobold":
+                return koboldNames[(int)(Math.round(Math.random()*koboldNames.length))];
+            case "Goblin":
+                return goblinNames[(int)(Math.round(Math.random()*goblinNames.length))];
+            default:
+                return "Bob";
+        }
+    }
+
+
+
+
+
 //        Class Based Health
-    public static int CBH(String species,String type){
+    public static int classBasedHealth(String species,String type){
         switch (species) {
             case "Kobold":
                         switch (type) {
@@ -19,24 +39,27 @@ public class UniversalStats {
                 default:
                     return 10;
     }
-            case "Human":
+            case "Goblin":
                 switch (type){
-                    case "Fighter":
-                        return 10;
-                    case "Wizard":
-                        return 6;
-                    case "Ranger":
+                    case "Common":
+                        return 10 + (int)(Math.round(Math.random()*2));
+                    case "Archer":
+                        return 12 + (int)(Math.round(Math.random()*2));
+                    case "Hob":
+                        return 8 + (int)(Math.round(Math.random()*2));
+                    default:
                         return 10;
                 }
 
     default:
             return 10;
-}
+        }
     }
 
 //    Classed Based Strength
     public static int classBasedStrength(String Species,String Type){
-
+        switch (Species){
+            case "Kobold":
                 switch (Type) {
                     case "Common":
                         return 7 + (int)(Math.round(Math.random()*3));
@@ -49,7 +72,20 @@ public class UniversalStats {
                     default:
                         return 7 + (int)(Math.round(Math.random()*3));
                 }
-
+            case "Goblin":
+                switch (Type) {
+                    case "Common":
+                        return 8 + (int)(Math.round(Math.random()*2));
+                    case "Archer":
+                        return 6 + (int)(Math.round(Math.random()*2));
+                    case "Hob":
+                        return 13 + (int)(Math.round(Math.random()*5));
+                    default:
+                        return 8 + (int)(Math.round(Math.random()*2));
+                }
+            default:
+                return 15;
+        }
     }
 
     //    Classed Based Dexterity
@@ -72,12 +108,10 @@ public class UniversalStats {
                 switch (Type) {
                     case "Common":
                         return 14 + (int)(Math.round(Math.random()*5));
-                    case "Warrior":
+                    case "Archer":
                         return 16 + (int)(Math.round(Math.random()*5));
-                    case "Shaman":
-                        return 15 + (int)(Math.round(Math.random()*5));
-                    case "Giant":
-                        return 14 + (int)(Math.round(Math.random()*2));
+                    case "Hob":
+                        return 12 + (int)(Math.round(Math.random()*5));
                     default:
                         return 15 + (int)(Math.round(Math.random()*5));
                 }
@@ -105,13 +139,11 @@ public class UniversalStats {
             case "Goblin":
                 switch (Type) {
                     case "Common":
-                        return 7 + (int) (Math.round(Math.random() * 2));
-                    case "Warrior":
                         return 8 + (int) (Math.round(Math.random() * 2));
-                    case "Shaman":
-                        return 10 + (int) (Math.round(Math.random() * 4));
+                    case "Archer":
+                        return 8 + (int) (Math.round(Math.random() * 2));
                     case "Hob":
-                        return 8 + (int) (Math.round(Math.random() * 2));
+                        return 10 + (int) (Math.round(Math.random() * 2));
                     default:
                         return 7 + (int) (Math.round(Math.random() * 3));
                 }
@@ -155,9 +187,9 @@ private static Weapon[] CommonKoboldWeapons = {new Dagger(),new Sling(),new Rust
 private static Weapon[] WarriorKoboldWeapons = {new ShortSword(),new Spear(),new HandAxe()};
 private static Weapon[] ShamanKoboldWeapons = {new Staff(),new PointyStick()};
 private static Weapon[] GiantKoboldWeapons = {new Sword(),new HeavyBranch(),new Axe()};
-private static Weapon[] CommonGoblinWeapons = {new Sword(),new HeavyBranch(),new Axe()};
-private static Weapon[] ArcherGoblinWeapons = {};
-private static Weapon[] HobGoblinWeapons = {new GreatSword(),new Axe()};
+private static Weapon[] CommonGoblinWeapons = {new PointyStick(),new Mace(),new Dagger(),new RustySpoon()};
+private static Weapon[] ArcherGoblinWeapons = {new ShortBow(),new LightCrossBow()};
+private static Weapon[] HobGoblinWeapons = {new GreatSword(),new HeavyCrossBow()};
 
 
 
