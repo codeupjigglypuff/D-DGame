@@ -3,21 +3,67 @@ import Characters.UniversalStats;
 import weapons.Weapon;
 
 public class Kobold extends Enemy {
-
-    public static String KoboldType = UniversalStats.ETP("Kobold");
-    public static Weapon[] possibleWeapons = UniversalStats.CBW("Kobold",this.type);
-    public static Weapon KoboldsWeapon = this.possibleWeapons[(int)(Math.round(Math.random()*(this.possibleWeapons.length)))];
-    public static int KoboldsHealth = UniversalStats.CBH("Kobold",KoboldType);
-    public static int KoboldsDamage = KoboldsWeapon.getDmg() + (Math.round(str-10)/2);
-    public static int KoboldsStrength = 7 + (int)(Math.round(Math.random()*3));
-    public static int KoboldsDexterity = 15 + (int)(Math.round(Math.random()*5));
-    public static int KoboldsWisdom = 7 + (int)(Math.round(Math.random()*2));
-
+    private String species = "Kobold";
+    private String KoboldType = UniversalStats.ETP(species);
+    private Weapon[] possibleWeapons = UniversalStats.CBW(this.species,this.KoboldType);
+    private Weapon KoboldsWeapon = this.possibleWeapons[(int)(Math.random()*(this.possibleWeapons.length))];
+    private int KoboldsHealth = UniversalStats.CBH(this.species,this.KoboldType);
+    private int KoboldsStrength = UniversalStats.classBasedStrength(species,KoboldType);
+    private int KoboldsDexterity = UniversalStats.classBasedDexterity(species,KoboldType);
+    private int KoboldsWisdom = UniversalStats.classBasedWisdom(species,KoboldType);
+    private int KoboldsDamage = KoboldsWeapon.getDmg() + (KoboldsStrength-10)/2;
 
 
     public Kobold(){
-        super("Kobold",UniversalStats.ETP("Kobold"),KoboldType,KoboldsHealth,KoboldsDamage,KoboldsStrength,KoboldsDexterity,KoboldsWisdom);
-
+        this.Species = species;
+        this.type = KoboldType;
+        this.weapon = KoboldsWeapon;
+        this.hth = KoboldsHealth;
+        this.dmg = KoboldsDamage;
+        this.str = KoboldsStrength;
+        this.dex = KoboldsDexterity;
+        this.wis = KoboldsDexterity;
     }
 
+
+
+
+
+
+
+    public String getKoboldSpecies() {
+        return species;
+    }
+
+    public String getKoboldType() {
+        return KoboldType;
+    }
+
+    public Weapon[] getPossibleWeapons() {
+        return possibleWeapons;
+    }
+
+    public Weapon getKoboldsWeapon() {
+        return KoboldsWeapon;
+    }
+
+    public int getKoboldsHealth() {
+        return KoboldsHealth;
+    }
+
+    public int getKoboldsStrength() {
+        return KoboldsStrength;
+    }
+
+    public int getKoboldsDexterity() {
+        return KoboldsDexterity;
+    }
+
+    public int getKoboldsWisdom() {
+        return KoboldsWisdom;
+    }
+
+    public int getKoboldsDamage() {
+        return KoboldsDamage;
+    }
 }

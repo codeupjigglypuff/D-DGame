@@ -6,26 +6,26 @@ public class UniversalStats {
 //        Class Based Health
     public static int CBH(String species,String type){
         switch (species) {
-            case "Enemy.Kobold":
+            case "Kobold":
                         switch (type) {
                 case "Common":
-                    return 10;
+                    return 10 + (int)(Math.round(Math.random()*2));
                 case "Warrior":
-                    return 12;
+                    return 12 + (int)(Math.round(Math.random()*2));
                 case "Shaman":
-                    return 8;
+                    return 8 + (int)(Math.round(Math.random()*2));
                 case "Giant":
-                    return 14;
+                    return 14 + (int)(Math.round(Math.random()*2));
                 default:
                     return 10;
     }
             case "Human":
                 switch (type){
-                    case "Characters.Fighter":
+                    case "Fighter":
                         return 10;
-                    case "Characters.Wizard":
+                    case "Wizard":
                         return 6;
-                    case "Characters.Ranger":
+                    case "Ranger":
                         return 10;
                 }
 
@@ -34,84 +34,144 @@ public class UniversalStats {
 }
     }
 
+//    Classed Based Strength
+    public static int classBasedStrength(String Species,String Type){
 
+                switch (Type) {
+                    case "Common":
+                        return 7 + (int)(Math.round(Math.random()*3));
+                    case "Warrior":
+                        return 8 + (int)(Math.round(Math.random()*2));
+                    case "Shaman":
+                        return 6 + (int)(Math.round(Math.random()*2));
+                    case "Giant":
+                        return 10 + (int)(Math.round(Math.random()*2));
+                    default:
+                        return 7 + (int)(Math.round(Math.random()*3));
+                }
 
-//        Weapon Based Damage
-    public static int WBD(String weapon){
-        switch (weapon){
-            case "Spear":
-                return 6;
-            case "Sling":
-                return 4;
-            case "Dagger":
-                return 4;
-            case "Short_Sword":
-                return 6;
-            case "Hand_Axe":
-                return 4;
-            case "Fists":
-                return 2;
-            case "Sword":
-                return 8;
-            case "Axe":
-                return 6;
-            case "Heavy_Branch":
-                return 6;
-            case "Great_Sword":
-                return 10;
-            case "Spell_Book":
-                return 6;
-            case "Short_Bow":
-                return 6;
+    }
+
+    //    Classed Based Dexterity
+    public static int classBasedDexterity(String Species,String Type){
+        switch (Species){
+            case "Kobold":
+                switch (Type) {
+                    case "Common":
+                        return 15 + (int)(Math.round(Math.random()*5));
+                    case "Warrior":
+                        return 16 + (int)(Math.round(Math.random()*5));
+                    case "Shaman":
+                        return 15 + (int)(Math.round(Math.random()*5));
+                    case "Giant":
+                        return 14 + (int)(Math.round(Math.random()*2));
+                    default:
+                        return 15 + (int)(Math.round(Math.random()*5));
+                }
+            case "Goblin":
+                switch (Type) {
+                    case "Common":
+                        return 14 + (int)(Math.round(Math.random()*5));
+                    case "Warrior":
+                        return 16 + (int)(Math.round(Math.random()*5));
+                    case "Shaman":
+                        return 15 + (int)(Math.round(Math.random()*5));
+                    case "Giant":
+                        return 14 + (int)(Math.round(Math.random()*2));
+                    default:
+                        return 15 + (int)(Math.round(Math.random()*5));
+                }
             default:
-                return 4;
+                return 15;
         }
     }
 
+    //    Classed Based Wisdom
+    public static int classBasedWisdom(String Species,String Type) {
+        switch (Species) {
+            case "Kobold":
+                switch (Type) {
+                    case "Common":
+                        return 7 + (int) (Math.round(Math.random() * 2));
+                    case "Warrior":
+                        return 8 + (int) (Math.round(Math.random() * 2));
+                    case "Shaman":
+                        return 10 + (int) (Math.round(Math.random() * 4));
+                    case "Giant":
+                        return 8 + (int) (Math.round(Math.random() * 2));
+                    default:
+                        return 7 + (int) (Math.round(Math.random() * 3));
+                }
+            case "Goblin":
+                switch (Type) {
+                    case "Common":
+                        return 7 + (int) (Math.round(Math.random() * 2));
+                    case "Warrior":
+                        return 8 + (int) (Math.round(Math.random() * 2));
+                    case "Shaman":
+                        return 10 + (int) (Math.round(Math.random() * 4));
+                    case "Hob":
+                        return 8 + (int) (Math.round(Math.random() * 2));
+                    default:
+                        return 7 + (int) (Math.round(Math.random() * 3));
+                }
+            default:
+                return 7;
 
+        }
+    }
 
 //        Class Based Weapon
 public static Weapon[] CBW(String species,String type){
         switch (species) {
-            case "Enemy.Kobold":
+            case "Kobold":
                 switch (type) {
                     case "Common":
-                        return CommonWeapons;
+                        return CommonKoboldWeapons;
                     case "Warrior":
-                        return WarriorWeapons;
+                        return WarriorKoboldWeapons;
                     case "Shaman":
-                        return ShamanWeapons;
+                        return ShamanKoboldWeapons;
                     case "Giant":
-                        return GiantWeapons;
+                        return GiantKoboldWeapons;
                 }
-            case "Human":
-                switch (type) {
-                    case "Characters.Fighter":
-                        return FighterStartingWeapons;
-                    case "Characters.Wizard":
-                        return WizardStartingWeapons;
-                    case "Characters.Ranger":
-                        return RangerStartingWeapons;
+            case "Goblin":
+                switch (type){
+                    case "Common":
+                        return CommonGoblinWeapons;
+                    case "Archer":
+                        return ArcherGoblinWeapons;
+                    case "Giant":
+                        return HobGoblinWeapons;
                 }
             default:
                 return CommonWeapons;
         }
 }
 
+
 private static Weapon[] CommonWeapons = {new Dagger(),new Sling(),new RustySpoon(),new PointyStick()};
-private static Weapon[] WarriorWeapons = {new ShortSword(),new Spear(),new HandAxe()};
-private static Weapon[] ShamanWeapons = {new Staff(),new PointyStick()};
-private static Weapon[] GiantWeapons = {new Sword(),new HeavyBranch(),new Axe()};
-private static Weapon[] FighterStartingWeapons = {new Sword(),new GreatSword(),new Axe()};
-private static Weapon[] WizardStartingWeapons = {new SpellBook()};
-private static Weapon[] RangerStartingWeapons = {new Spear()};
+private static Weapon[] CommonKoboldWeapons = {new Dagger(),new Sling(),new RustySpoon(),new PointyStick()};
+private static Weapon[] WarriorKoboldWeapons = {new ShortSword(),new Spear(),new HandAxe()};
+private static Weapon[] ShamanKoboldWeapons = {new Staff(),new PointyStick()};
+private static Weapon[] GiantKoboldWeapons = {new Sword(),new HeavyBranch(),new Axe()};
+private static Weapon[] CommonGoblinWeapons = {new Sword(),new HeavyBranch(),new Axe()};
+private static Weapon[] ArcherGoblinWeapons = {};
+private static Weapon[] HobGoblinWeapons = {new GreatSword(),new Axe()};
 
 
-//        Characters Type Probability
+
+
+
+
+
+
+
+    //        Characters Type Probability
 public static String ETP(String Species){
-    private String[] EnemyArray = {"Common","Warrior","Shaman","Giant"}
+    String[] EnemyArray = {"Common","Warrior","Shaman","Giant"};
     switch (Species){
-        case "Enemy.Kobold":
+        case "Kobold":
             double ran = (Math.random()*10)+1;
             if(1 <= ran && ran <= 4){
                 return EnemyArray[0];
@@ -122,8 +182,6 @@ public static String ETP(String Species){
             }else{
                 return EnemyArray[3];
             }
-
-
 
         default:
             return "Common";

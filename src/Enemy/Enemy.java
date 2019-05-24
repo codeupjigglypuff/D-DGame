@@ -1,6 +1,6 @@
 package Enemy;
 import weapons.*;
-public abstract class Enemy {
+public class Enemy {
 //    Enemy Species
     public String Species;
 //    Enemy Species Sub Category
@@ -29,6 +29,17 @@ public abstract class Enemy {
             this.str = Strength;
             this.dex = Dexterity;
             this.wis = Wisdom;
+    }
+
+    public String inspect(){
+        return "\t"+this.type+" "+this.Species+
+                "\nWeapon :"+this.weapon.getName()+
+                "\nWeapon DMG :"+this.weapon.getDmg()+
+                "\nDamage :"+this.dmg+
+                "\nStrength :"+this.str+
+                "\nDexterity :"+this.dex+
+                "\nWisdom :"+this.wis+
+                "\nHealth :"+this.hth+"\n";
     }
 
 }
