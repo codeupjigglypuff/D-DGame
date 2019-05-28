@@ -1,3 +1,4 @@
+
 package environment;
 
 public class TheTavernOnTheRocks extends Dungeon{
@@ -20,3 +21,4 @@ public class TheTavernOnTheRocks extends Dungeon{
 
     }
 }
+
