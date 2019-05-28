@@ -4,17 +4,29 @@ import Enemy.Enemy;
 
 // generic dungeon model for other rooms.
 public class Dungeon {
-
+// boolean for exits. will be set as rooms are created
     private boolean exitNorth;
     private boolean exitEast;
     private boolean exitSouth;
     private boolean exitWest;
+// string telling where the exits can be seen.
+    private String northExit = "Upon your initial scan of the room you see that there is an exit " +
+        "to the North." ;
+    private String eastExit = "Upon your initial scan of the room you see that there is an exit " +
+            "to the East." ;
+    private String southExit = "Upon your initial scan of the room you see that there is an exit " +
+            "to the South.";
+    private String westExit = "Upon your initial scan of the room you see that there is an exit " +
+            "to the West.";
+    // descriptions, objects, and enemies will be set as rooms are created
     private String description;
     private String hiddenDescription;
     private String[] objects;
     private String[] hiddenObjects;
     private Enemy[] enemies;
     private String[] hiddenEnemies;
+
+
 
     public Dungeon(boolean exitNorth,
                    boolean exitEast,
@@ -106,5 +118,23 @@ public class Dungeon {
 
     public void setHiddenEnemies(String[] hiddenEnemies) {
         this.hiddenEnemies = hiddenEnemies;
+    }
+
+//    exit getters for strings. just returns strings for exit description.
+
+    public String getNorthExit() {
+        return northExit;
+    }
+
+    public String getEastExit() {
+        return eastExit;
+    }
+
+    public String getSouthExit() {
+        return southExit;
+    }
+
+    public String getWestExit() {
+        return westExit;
     }
 }

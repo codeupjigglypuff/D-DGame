@@ -1,8 +1,9 @@
 package environment;
 
 public class TheTavernOnTheRocks extends Dungeon{
-
-    private boolean firstTime = false;
+//  first time visiting this tavern?
+    private boolean firstTime = true;
+//    hard coded descriptions for this area.
     private String firstTimeDiscription = (
             "You find yourself in a tavern like many others. Lively, smokey, reeking of ale " +
                     "and men. A foul stench that sticks in your nose long after you have " +
@@ -14,12 +15,46 @@ public class TheTavernOnTheRocks extends Dungeon{
     );
 
     private String description = (
-            ""
+            "The tavern is not much better than it was before. Its just as smoky and smelly as " +
+                    "it was when you were last here. But whatever it is that brings you to this " +
+                    "place again far exceeds your desire for more accommodating surroundings. "
             );
 
-
+//    constructor calling super class constructor to set exits
     public TheTavernOnTheRocks() {
         super(false, false, true, false);
 
     }
+// getters
+    public boolean isFirstTime() {
+        return firstTime;
+    }
+
+    public String getFirstTimeDiscription() {
+        return this.firstTimeDiscription;
+    }
+
+    @Override
+    public String getDescription() {
+        return this.description;
+    }
+//    setters
+    public void setFirstTime(boolean set){
+        this.firstTime = set;
+    }
+
+//    Methods
+//    initial run. After character creation.
+
+    public void enterTavern(){
+//        is first time?
+        if (isFirstTime()){
+            setFirstTime(false);
+            System.out.println(getFirstTimeDiscription());
+
+            return;
+        }
+        System.out.println(getDescription());
+    }
+
 }
