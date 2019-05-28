@@ -384,15 +384,15 @@ public class UniversalStats {
 
 }
 
-private static Weapon[] CommonWeapons = {new Dagger(),new Sling(),new RustySpoon(),new PointyStick()};
-private static Weapon[] WarriorWeapons = {new ShortSword(),new Spear(),new HandAxe()};
-private static Weapon[] ShamanWeapons = {new Staff(),new PointyStick()};
-private static Weapon[] GiantWeapons = {new Sword(),new HeavyBranch(),new Axe()};
-private static Weapon[] FighterStartingWeapons = {new Sword(),new GreatSword(),new Axe()};
-private static Weapon[] WizardStartingWeapons = {new SpellBook()};
-private static Weapon[] RangerStartingWeapons = {new Spear()};
-
-
+//private static Weapon[] CommonWeapons = {new Dagger(),new Sling(),new RustySpoon(),new PointyStick()};
+//private static Weapon[] WarriorWeapons = {new ShortSword(),new Spear(),new HandAxe()};
+//private static Weapon[] ShamanWeapons = {new Staff(),new PointyStick()};
+//private static Weapon[] GiantWeapons = {new Sword(),new HeavyBranch(),new Axe()};
+//private static Weapon[] FighterStartingWeapons = {new Sword(),new GreatSword(),new Axe()};
+//private static Weapon[] WizardStartingWeapons = {new SpellBook()};
+//private static Weapon[] RangerStartingWeapons = {new Spear()};
+//
+//
 //        Characters Type Probability
 //public static String ETP(String Species){
 //    private String[] EnemyArray = {"Common","Warrior","Shaman","Giant"}
@@ -416,10 +416,10 @@ private static Weapon[] RangerStartingWeapons = {new Spear()};
 //    }
 //
 //}
+//
 
 
-
-
-
-}
-
+//
+//
+//}
+//
