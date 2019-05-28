@@ -73,7 +73,7 @@ private int reqStrength = 0;
         this.wght = wght;
         this.cost = cost;
         this.name = name;
-        this.catagory = catagory;
+        this.category = catagory;
         this.reqStrength = reqStrength;
     }
 }
