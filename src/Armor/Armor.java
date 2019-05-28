@@ -68,4 +68,12 @@ private int reqStrength = 0;
 
 }
 
+    public Armor(int armorClass, int wght, int cost, String name, String catagory, int reqStrength) {
+        this.armorClass = armorClass;
+        this.wght = wght;
+        this.cost = cost;
+        this.name = name;
+        this.catagory = catagory;
+        this.reqStrength = reqStrength;
+    }
 }

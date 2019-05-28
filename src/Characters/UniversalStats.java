@@ -330,6 +330,7 @@ public class UniversalStats {
             default:
                 return CommonWeapons;
         }
+
     }
 
 
@@ -380,6 +381,42 @@ public class UniversalStats {
         }
 
     }
+
+}
+
+private static Weapon[] CommonWeapons = {new Dagger(),new Sling(),new RustySpoon(),new PointyStick()};
+private static Weapon[] WarriorWeapons = {new ShortSword(),new Spear(),new HandAxe()};
+private static Weapon[] ShamanWeapons = {new Staff(),new PointyStick()};
+private static Weapon[] GiantWeapons = {new Sword(),new HeavyBranch(),new Axe()};
+private static Weapon[] FighterStartingWeapons = {new Sword(),new GreatSword(),new Axe()};
+private static Weapon[] WizardStartingWeapons = {new SpellBook()};
+private static Weapon[] RangerStartingWeapons = {new Spear()};
+
+
+//        Characters Type Probability
+//public static String ETP(String Species){
+//    private String[] EnemyArray = {"Common","Warrior","Shaman","Giant"}
+//    switch (Species){
+//        case "Enemy.Kobold":
+//            double ran = (Math.random()*10)+1;
+//            if(1 <= ran && ran <= 4){
+//                return EnemyArray[0];
+//            }else if (4 < ran && ran <= 7){
+//                return EnemyArray[1];
+//            }else if (7 < ran && ran <= 9){
+//                return EnemyArray[2];
+//            }else{
+//                return EnemyArray[3];
+//            }
+//
+//
+//
+//        default:
+//            return "Common";
+//    }
+//
+//}
+
 
 
 
