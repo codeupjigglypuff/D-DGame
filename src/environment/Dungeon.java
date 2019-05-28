@@ -1,4 +1,7 @@
 package environment;
+
+import Enemy.Enemy;
+
 // generic dungeon model for other rooms.
 public class Dungeon {
 
@@ -89,11 +92,11 @@ public class Dungeon {
         this.hiddenObjects = hiddenObjects;
     }
 
-    public String[] getEnemies() {
+    public Enemy[] getEnemies() {
         return enemies;
     }
 
-    public void setEnemies(String[] enemies) {
+    public void setEnemies(Enemy[] enemies) {
         this.enemies = enemies;
     }
 
