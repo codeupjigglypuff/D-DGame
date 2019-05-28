@@ -1,12 +1,5 @@
 package Armor;
 
 public class SplintArmor extends Armor {
-    public SplintArmor(){
-        this.armorClass = 17;
-        this.cost = 200;
-        this.wght = 60;
-        this.name = "Splint Armor";
-        this.catagory = "Heavy_Armor";
-        this.reqStrength = 15;
-    }
+    public SplintArmor(){super("Splint Armor","Heavy_Armor",200,60,17,15);}
 }

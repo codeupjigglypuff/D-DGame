@@ -1,6 +1,10 @@
 package Enemy;
+import Armor.Armor;
 import Characters.UniversalStats;
+import Items.Item;
 import weapons.Weapon;
+
+import java.util.ArrayList;
 
 public class Kobold extends Enemy {
     private String species = "Kobold";
@@ -13,7 +17,9 @@ public class Kobold extends Enemy {
     private int KoboldsDexterity = UniversalStats.classBasedDexterity(species,KoboldType);
     private int KoboldsWisdom = UniversalStats.classBasedWisdom(species,KoboldType);
     private int KoboldsDamage = KoboldsWeapon.getDmg() + (KoboldsStrength-10)/2;
-
+    private Armor KoboldsArmor = UniversalStats.classBasedArmor(species,KoboldType);
+    @SuppressWarnings("unchecked")
+    private ArrayList<Item> KoboldsInv = new ArrayList<>(UniversalStats.classBasedInventory(species,KoboldType));
 
     public Kobold(){
         this.Species = species;
@@ -25,6 +31,8 @@ public class Kobold extends Enemy {
         this.str = KoboldsStrength;
         this.dex = KoboldsDexterity;
         this.wis = KoboldsDexterity;
+        this.arm = KoboldsArmor;
+        this.inv = KoboldsInv;
     }
 
 
@@ -67,5 +75,17 @@ public class Kobold extends Enemy {
 
     public int getKoboldsDamage() {
         return KoboldsDamage;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public String getKoboldName() {
+        return KoboldName;
+    }
+
+    public ArrayList<Item> getKoboldsInv() {
+        return KoboldsInv;
     }
 }

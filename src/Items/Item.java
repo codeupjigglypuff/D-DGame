@@ -6,6 +6,15 @@ public class Item {
     private int value;
     private String Description;
 
+    public Item(){}
+
+
+    public Item(String name,String item_Type,int Value,String Description){
+        this.Name = name;
+        this.Item_Type = item_Type;
+        this.value = Value;
+        this.Description = Description;
+    }
 
     public void setName(String name) {
         Name = name;

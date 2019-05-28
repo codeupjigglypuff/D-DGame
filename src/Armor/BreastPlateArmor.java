@@ -1,11 +1,5 @@
 package Armor;
 
 public class BreastPlateArmor extends Armor {
-    public BreastPlateArmor(){
-        this.armorClass = 14;
-        this.cost = 400;
-        this.wght = 20;
-        this.name = "Breast Plate Armor";
-        this.catagory = "Medium_Armor";
-    }
+    public BreastPlateArmor(){super("Breast Plate Armor","Medium_Armor",400,20,14,0);}
 }

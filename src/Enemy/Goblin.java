@@ -1,7 +1,11 @@
 package Enemy;
 
+import Armor.Armor;
 import Characters.UniversalStats;
+import Items.Item;
 import weapons.Weapon;
+
+import java.util.ArrayList;
 
 public class Goblin extends Enemy {
     private String species = "Goblin";
@@ -14,6 +18,9 @@ public class Goblin extends Enemy {
     private int GoblinDexterity = UniversalStats.classBasedDexterity(species,GoblinType);
     private int GoblinWisdom = UniversalStats.classBasedWisdom(species,GoblinType);
     private int GoblinDamage = GoblinWeapon.getDmg() + (GoblinStrength-10)/2;
+    private Armor GoblinsArmor = UniversalStats.classBasedArmor(species,GoblinType);
+    @SuppressWarnings({"unchecked"})
+    private ArrayList<Item> GoblinsInv = new ArrayList<>(UniversalStats.classBasedInventory(species,GoblinType));
 
 
     public Goblin(){
@@ -26,5 +33,7 @@ public class Goblin extends Enemy {
         this.str = GoblinStrength;
         this.dex = GoblinDexterity;
         this.wis = GoblinWisdom;
+        this.arm = GoblinsArmor;
+        this.inv = GoblinsInv;
     }
 }
