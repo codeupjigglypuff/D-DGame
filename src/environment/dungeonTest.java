@@ -4,7 +4,6 @@ public class dungeonTest {
     public static void main(String[] args) {
         TheTavernOnTheRocks newRoom = new TheTavernOnTheRocks();
         newRoom.enterTavern();
-        newRoom.searchExits();
 
     }
 }
