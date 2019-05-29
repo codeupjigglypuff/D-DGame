@@ -11,13 +11,13 @@ public class Dungeon {
     private boolean exitSouth;
     private boolean exitWest;
 // string telling where the exits can be seen.
-    private String northExit = "Upon your initial scan of the room you see that there is an exit " +
+    private String northExit = "Upon scanning the room you see that there is an exit " +
         "to the North." ;
-    private String eastExit = "Upon your initial scan of the room you see that there is an exit " +
+    private String eastExit = "Upon scanning the room you see that there is an exit " +
             "to the East." ;
-    private String southExit = "Upon your initial scan of the room you see that there is an exit " +
+    private String southExit = "Upon scanning the room you see that there is an exit " +
             "to the South.";
-    private String westExit = "Upon your initial scan of the room you see that there is an exit " +
+    private String westExit = "Upon scanning the room you see that there is an exit " +
             "to the West.";
     // descriptions, objects, and enemies will be set as rooms are created
     private String description;
@@ -137,5 +137,21 @@ public class Dungeon {
 
     public String getWestExit() {
         return westExit;
+    }
+
+    public void searchExits(){
+        if(this.getExitEast()){
+            System.out.println(getEastExit());
+        }
+        if(this.getExitNorth()){
+            System.out.println(getNorthExit());
+        }
+        if(this.getExitSouth()){
+            System.out.println(this.getSouthExit());
+        }
+        if(this.getExitWest()){
+            System.out.println(this.getWestExit());
+        }
+
     }
 }
