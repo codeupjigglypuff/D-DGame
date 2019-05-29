@@ -1,6 +1,6 @@
-//package Characters;
-//
-//import Characters.UniversalStats;
+package Characters;
+
+import Characters.UniversalStats;
 //
 //public class Fighter {
 //    private String Species = "Human";

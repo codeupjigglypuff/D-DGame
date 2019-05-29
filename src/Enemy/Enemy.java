@@ -46,15 +46,21 @@ public class Enemy {
     }
 
     public String Inventorylist(){
-        String list = "";
+        String list = "-----------------\n";
         for (int i = 0;i < this.inv.size();i++){
-            list += "[";
-            list += this.inv.get(i).getName();
-            list += "]";
+            if (this.inv.get(i).getName().equals("Bag of Gold")){
+                list += "  Bag of "+this.inv.get(i).getValue()+" gold\n-----------------\n";
+            }else {
+                list += this.inv.get(i).getName()+"\n-----------------\n";
+            }
         }
+
         return list;
     }
 
+    public int Attacks(){
+        return (int)(Math.random()*this.dmg)+1;
+    }
 
 
 
@@ -70,7 +76,7 @@ public class Enemy {
                 "\nWisdom :"+this.wis+
                 "\nHealth :"+this.hth+
                 "\nArmor :"+this.arm.getName()+
-                "\nInventory :"+Inventorylist()+"\n";
+                "\nInventory ↴\n"+Inventorylist()+"\n";
 
     }
 

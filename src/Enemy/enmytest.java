@@ -1,5 +1,8 @@
 package Enemy;
 
+
+import Attack.EnemyAttacks;
+
 public class enmytest {
     public static void main(String[] args) {
 
@@ -18,12 +21,6 @@ public class enmytest {
         Enemy gob4 = new Goblin();
         Enemy gob5 = new Goblin();
 
-
-
-
-
-
-
         System.out.println(bob0.inspect());
         System.out.println(bob1.inspect());
         System.out.println(bob2.inspect());
@@ -38,8 +35,14 @@ public class enmytest {
         System.out.println(gob3.inspect());
         System.out.println(gob4.inspect());
         System.out.println(gob5.inspect());
-        gob5.Inventorylist();
+
+        EnemyAttacks atk = new EnemyAttacks();
+        atk.attackSQ(bob0,gob0,gob1,gob2);
+
+
 
 
     }
+
+
 }
