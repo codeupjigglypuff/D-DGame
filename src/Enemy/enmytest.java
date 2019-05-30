@@ -21,20 +21,6 @@ public class enmytest {
         Enemy gob4 = new Goblin();
         Enemy gob5 = new Goblin();
 
-        System.out.println(bob0.inspect());
-        System.out.println(bob1.inspect());
-        System.out.println(bob2.inspect());
-        System.out.println(bob3.inspect());
-        System.out.println(bob4.inspect());
-        System.out.println(bob5.inspect());
-        System.out.println(bob6.inspect());
-        System.out.println(bob7.inspect());
-        System.out.println(gob0.inspect());
-        System.out.println(gob1.inspect());
-        System.out.println(gob2.inspect());
-        System.out.println(gob3.inspect());
-        System.out.println(gob4.inspect());
-        System.out.println(gob5.inspect());
 
         EnemyAttacks atk = new EnemyAttacks();
         atk.attackSQ(bob0,gob0,gob1,gob2);
