@@ -24,7 +24,8 @@ public class EnemyAttacks {
             if (attackingEnemys.get(0).hth <= 0){
                 System.out.println(attackingEnemys.get(0).name+" has been killed");
                 attackingEnemys.remove(0);
-                System.out.println("You move to you next enemy "+attackingEnemys.get(0).name+" who has "+attackingEnemys.get(0).hth+" health");
+                System.out.println("You move to you next enemy "+attackingEnemys.get(0).name+" " +
+                        "who has "+attackingEnemys.get(0).hth+" health");
             }else {
                 System.out.println(attackingEnemys.get(0).name + " now has " + attackingEnemys.get(0).hth + " health.");
             }

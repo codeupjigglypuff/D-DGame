@@ -35,7 +35,19 @@ public class TheTavernOnTheRocks extends Dungeon{
             "to a stash of riches that was left in a kobold infested cave near here.. Alas, I am\n" +
             "too little to take on a horde of kobolds, but I am willing to sell this to you for\n" +
             "a measly 100 gold coins. You can keep the riches, I am just looking to pay off my\n " +
-            "tab at the tavern!”\n \n What do you do?"
+            "tab at the tavern!”\n \n Do you buy the map?"
+            );
+
+    private String mapBought = (
+            "\"You won’t regret this. It will take you directly to where the riches were " +
+                    "hidden!”  The half man stretches\n out his arm to hand you the piece of " +
+                    "parchment with a series of circles squares and lines scribbled in it.\n " +
+                    "One of the circles has an X on it with some arcane symbols written on it. " +
+                    "You try to make out what it\n says, but ultimately brush it off as " +
+                    "gibberish. \n" +
+                    "\n" +
+                    "By the time you finish looking over the map the halfling has already gone. " +
+                    "You didn’t even get his name."
             );
 
 //    constructor calling super class constructor to set exits
@@ -77,14 +89,27 @@ public class TheTavernOnTheRocks extends Dungeon{
 
             System.out.println(this.aHalflingApproaches);
 
+            boolean buysMap = sc.yesNo();
+            if(buysMap){
+                System.out.println(this.mapBought);
+            }
 
+            System.out.println("What will you do from here?");
+
+            sc.getString();
 
             return;
         }
         System.out.println(getDescription());
         this.searchExits();
+        System.out.println("What will you do from here?");
+
+        sc.getString();
+
     }
 
+    public void exitTavern(){
 
+    }
 }
 
