@@ -15,20 +15,36 @@ public class EnemyAttacks {
         attackingEnemys.add(Enemy1);
         attackingEnemys.add(Enemy2);
         attackingEnemys.add(Enemy3);
+        int killer = 0;
 
 //        Attack method
-        while (Hero.hth > 0 || attackingEnemys.size() > 0){
+        while (Hero.hth >= 0 && attackingEnemys.size() > 0){
             int heroattack = Hero.Attacks();
             attackingEnemys.get(0).hth -= heroattack;
-            System.out.println(Hero.name+" Attacked "+attackingEnemys.get(0).name+" for "+heroattack+" Damage");
+            System.out.println("You attack "+attackingEnemys.get(0).name+" for "+Hero.dmg+" Damage\nYou managed to damage "+attackingEnemys.get(0).name+" for "+heroattack+".");
             if (attackingEnemys.get(0).hth <= 0){
-                System.out.println(attackingEnemys.get(0).name+" has been killed");
+                System.out.println("You killed "+attackingEnemys.get(0).name+".");
                 attackingEnemys.remove(0);
-                System.out.println("You move to you next enemy "+attackingEnemys.get(0).name+" who has "+attackingEnemys.get(0).hth+" health");
+                System.out.println("\nYou inspect your next enemy \n\n"+attackingEnemys.get(0).inspect());
             }else {
                 System.out.println(attackingEnemys.get(0).name + " now has " + attackingEnemys.get(0).hth + " health.");
             }
             scan.getString();
+            for (int i = 0;i < attackingEnemys.size(); i++){
+
+                int enemyattack = attackingEnemys.get(i).Attacks();
+                Hero.hth -= enemyattack;
+                System.out.print(attackingEnemys.get(i).name+" attacks you for "+attackingEnemys.get(i).dmg+"\n" +
+                        attackingEnemys.get(i).name+" damaged you for "+enemyattack+"\n");
+                if (Hero.hth <= 0){
+                    killer = i;
+                    System.out.println("You have been killed");
+
+                }else {
+                    System.out.println("You now have "+Hero.hth+" health.\n");
+                }
+                scan.getString();
+            }
 
 
 
@@ -45,6 +61,10 @@ public class EnemyAttacks {
 
 
         }
-        System.out.println("You have killed all the enemies");
+        if (Hero.hth > 0) {
+            System.out.println("You have killed all the enemies in the room");
+        }else{
+            System.out.println("You have Succumbed to "+attackingEnemys.get(killer).name);
+        }
     }
 }
