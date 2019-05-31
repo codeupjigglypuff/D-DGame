@@ -37,14 +37,41 @@ public class Input {
         //System.out.println("System waiting for user input");
         this.scanner = new Scanner(System.in);
     }
-
+//********************************************************************************************
     public String getString(){
-        System.out.println("Please input a string.");
+        System.out.println("What would you like to do?");
         String input = this.scanner.nextLine();
-
+//       Switch statement to listen for menu input from the player. This should be menu options
+//       and stuff like that.
+        switch (input.toLowerCase()){
+            case "menu":
+//                todo menu method
+                break;
+            case "status":
+//                todo status method
+                break;
+            case "inspect":
+//                todo inspect method
+                break;
+            case "level":
+//                todo level method
+                break;
+            case "search":
+//                todo search method
+                break;
+            case"exit":
+//                todo exit method. should be exicuted in the environment object This case may
+//                 not be needed here.
+                break;
+            case "inventory":
+//                todo inventory method and functionality.
+                default:
+                    return input;
+        }
         System.out.println(input);
         return input;
     }
+    //********************************************************************************************
     public boolean yesNo(){
         //System.out.println("Please input an affirmation");
         String input = this.scanner.nextLine();
@@ -89,7 +116,7 @@ public class Input {
         }
     }
 
-
+//********************************************************************************************
 
     public int getInt(){
 
@@ -123,6 +150,7 @@ public class Input {
 
 
     }
+    //********************************************************************************************
     public double getDouble(){
         try {
             System.out.println("Please enter any floating point number:");
